@@ -180,7 +180,7 @@ export const CSS = `
   border-bottom: 1px solid var(--border);
   background:
     radial-gradient(circle at 76% 14%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 34%),
-    var(--surface2);
+    var(--surface-2);
   pointer-events: none;
   isolation: isolate;
 }
@@ -255,7 +255,7 @@ export const CSS = `
   background: var(--surface); border: 1px solid var(--border); border-radius: 0.5rem;
 }
 .af-card-actions button { min-height: 44px; padding: 0.5rem 0.75rem; border: 0; border-radius: 0.25rem; background: transparent; color: var(--text); font: inherit; cursor: pointer; }
-.af-card-actions button:hover, .af-card-options:hover { background: var(--surface2); }
+.af-card-actions button:hover, .af-card-options:hover { background: var(--surface-2); }
 .af-card-actions button:focus-visible, .af-card-options:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
 .af-card-actions button:disabled { opacity: 0.6; cursor: wait; }
 .af-card-actions p { margin: 0.375rem; max-width: 28ch; font-size: 0.8125rem; color: var(--text); }
@@ -276,7 +276,7 @@ export const CSS = `
   white-space: nowrap;
   font-variant-numeric: tabular-nums;
 }
-.af-chip { background: var(--surface2); color: var(--muted); }
+.af-chip { background: var(--surface-2); color: var(--muted); }
 .af-badge-shared { background: color-mix(in srgb, var(--green) 13%, transparent); color: var(--green); }
 
 /* mobius-ui:Button — app-owned. */
@@ -305,7 +305,7 @@ export const CSS = `
 .af-btn:disabled { opacity: 0.5; cursor: default; transform: none; }
 .af-btn-primary { background: var(--accent); border-color: var(--accent); color: var(--accent-fg); }
 .af-btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
-.af-btn-secondary { background: var(--surface2); }
+.af-btn-secondary { background: var(--surface-2); }
 .af-btn-ghost { background: transparent; border-color: transparent; }
 .af-btn-ghost:hover { background: var(--accent-dim); border-color: transparent; }
 .af-btn-danger { background: var(--danger); border-color: var(--danger); color: var(--accent-fg); }
@@ -350,7 +350,7 @@ export const CSS = `
 /* /mobius-ui:Empty */
 
 .af-detail-loading { display: flex; height: 100%; flex-direction: column; gap: 1rem; padding: 1rem; background: var(--bg); }
-.af-skeleton { min-height: 0.875rem; border-radius: 0.375rem; background: color-mix(in srgb, var(--muted) 16%, var(--surface2)); animation: af-pulse 1.5s ease-in-out infinite; }
+.af-skeleton { min-height: 0.875rem; border-radius: 0.375rem; background: color-mix(in srgb, var(--muted) 16%, var(--surface-2)); animation: af-pulse 1.5s ease-in-out infinite; }
 .af-skeleton.is-short { width: 54%; }
 .af-skeleton-icon { width: 2.75rem; height: 2.75rem; flex: 0 0 auto; border-radius: 0.75rem; }
 .af-skeleton-title { width: 42%; height: 1.5rem; }
@@ -380,8 +380,8 @@ export const CSS = `
   cursor: pointer;
   touch-action: manipulation;
 }
-.af-view-toggle button.is-active { background: var(--surface2, var(--surface)); color: var(--text); }
-.af-view-toggle button:active { background: var(--surface2, var(--surface)); }
+.af-view-toggle button.is-active { background: var(--surface-2, var(--surface)); color: var(--text); }
+.af-view-toggle button:active { background: var(--surface-2, var(--surface)); }
 @media (hover: hover) {
   .af-view-toggle button:hover:not(.is-active) { background: var(--surface); color: var(--text); }
 }
@@ -490,7 +490,7 @@ export const CSS = `
   cursor: pointer;
 }
 .af-disc > summary::-webkit-details-marker { display: none; }
-.af-disc-count { display: inline-flex; align-items: center; justify-content: center; min-width: 1.5rem; min-height: 1.5rem; padding-inline: 0.25rem; border-radius: 999px; background: var(--surface2); color: var(--muted); font-size: 0.6875rem; font-variant-numeric: tabular-nums; }
+.af-disc-count { display: inline-flex; align-items: center; justify-content: center; min-width: 1.5rem; min-height: 1.5rem; padding-inline: 0.25rem; border-radius: 999px; background: var(--surface-2); color: var(--muted); font-size: 0.6875rem; font-variant-numeric: tabular-nums; }
 .af-disc-chevron { margin-left: auto; color: var(--muted); transition: transform 180ms cubic-bezier(0.25, 1, 0.5, 1); }
 .af-disc[open] .af-disc-chevron { transform: rotate(180deg); }
 .af-timeline { padding: 0 0.75rem 0.75rem; }
@@ -557,7 +557,7 @@ export const CSS = `
 .af-share-preview img { display: block; width: 100%; height: auto; aspect-ratio: 1200 / 630; object-fit: cover; }
 .af-share-preview figcaption { display: flex; align-items: center; justify-content: space-between; padding: 0.625rem 0.75rem; border-top: 1px solid color-mix(in srgb, #fff 14%, transparent); background: color-mix(in srgb, #16122b 94%, transparent); color: #d5cfe2; font-size: 0.75rem; }
 .af-share-preview figcaption strong { color: #fff; font-size: 0.6875rem; letter-spacing: 0.02em; }
-.af-share-url { display: flex; align-items: center; gap: 0.5rem; margin: 0.75rem 0 0; padding: 0.625rem 0.75rem; border: 1px solid var(--border); border-radius: 0.625rem; background: var(--surface2); }
+.af-share-url { display: flex; align-items: center; gap: 0.5rem; margin: 0.75rem 0 0; padding: 0.625rem 0.75rem; border: 1px solid var(--border); border-radius: 0.625rem; background: var(--surface-2); }
 .af-share-url span { flex: 1; min-width: 0; overflow: hidden; color: var(--text); font: 500 0.75rem/1.4 var(--mono); text-overflow: ellipsis; white-space: nowrap; }
 .af-share-primary { display: flex; gap: 0.5rem; margin-top: 0.75rem; }
 .af-share-primary > .af-btn { flex: 1; }
@@ -590,7 +590,7 @@ export const CSS = `
 .af-option > span:last-child { display: flex; min-width: 0; flex-direction: column; gap: 0.1875rem; }
 .af-option strong { font-size: 0.9375rem; line-height: 1.3; font-weight: 660; }
 .af-option small { color: var(--muted); font-size: 0.75rem; line-height: 1.35; }
-.af-option-icon { display: inline-flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem; flex: 0 0 auto; border-radius: 0.6875rem; background: var(--surface2); color: var(--accent); }
+.af-option-icon { display: inline-flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem; flex: 0 0 auto; border-radius: 0.6875rem; background: var(--surface-2); color: var(--accent); }
 .af-option.is-danger { color: var(--danger); }
 .af-option.is-danger .af-option-icon { background: color-mix(in srgb, var(--danger) 10%, transparent); color: var(--danger); }
 @keyframes af-fade-in { from { opacity: 0; } }
