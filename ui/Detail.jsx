@@ -20,6 +20,7 @@ import { VersionSheet } from './VersionTimeline.jsx'
 import { ArtifactOptionsSheet, DeleteSheet, ShareSheet } from './ShareSheet.jsx'
 import { copyPlainText } from './clipboard.js'
 import { createDetailSync } from './detailSync.js'
+import { removePageStorage } from './deletePage.js'
 import {
   ArrowLeftIcon,
   CodeIcon,
@@ -361,10 +362,7 @@ export function Detail({ artifactId, storage, token, onPreviewFrame, onClose, on
           return
         }
       }
-      await storage.removeFolder(`versions/${record.id}`)
-      await storage.removeFolder(`projects/${record.id}`)
-      await storage.remove(`shares/${record.id}.json`)
-      await storage.remove(`artifacts/${record.id}.json`)
+      await removePageStorage(storage, record.id)
       onDeleted(record.id)
     } catch (error) {
       showToast(error?.message || 'Page could not be deleted.', 'error')

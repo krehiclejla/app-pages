@@ -33,6 +33,7 @@
     "ui/catalogSnapshot.js",
     "ui/clipboard.js",
     "ui/detailSync.js",
+    "ui/deletePage.js",
     "ui/Detail.jsx",
     "ui/Empty.jsx",
     "ui/Gallery.jsx",
