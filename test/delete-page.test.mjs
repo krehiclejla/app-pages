@@ -12,7 +12,7 @@ function harness({ fail = () => null } = {}) {
   }
   return {
     calls,
-    storage: { removeConfirmed: attempt, remove: attempt, removeFolder: attempt },
+    storage: { remove: attempt, removeFolder: attempt },
   }
 }
 
