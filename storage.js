@@ -35,7 +35,7 @@ export function makeStorage(appId, token) {
   }
 
   async function getFresh(path) {
-    const response = await fetch(`/api/storage/apps/${appId}/${path}`, { headers: auth })
+    const response = await fetch(`/api/storage/apps/${appId}/${path}`, { headers: auth, cache: 'no-store' })
     if (response.status === 404) return null
     if (!response.ok) throw new Error(`Could not read ${path} (${response.status}).`)
     return response.json()
@@ -91,6 +91,21 @@ export function makeStorage(appId, token) {
       throw new Error(`Could not remove ${path} (${response.status}).`)
     }
     return { synced: true }
+  }
+
+  // Content cleanup requires server absence, not an optimistic tombstone or
+  // legacy runtime "synced" flag (which can also mean dead-letter refusal).
+  // Keep removal on the runtime's serialized path so its mirror/listings and
+  // outbox supersede old same-path PUTs; a raw DELETE would bypass all three.
+  async function removeConfirmed(path) {
+    const result = await remove(path)
+    if (result?.queued || result?.rejected || result?.superseded) {
+      throw new Error(`Removal of ${path} is not confirmed. Try again when online.`)
+    }
+    if (await getFresh(path) !== null) {
+      throw new Error(`Could not confirm removal of ${path}. Please try again.`)
+    }
+    return { confirmed: true }
   }
 
   async function list(prefix = '', options = {}) {
@@ -183,6 +198,7 @@ export function makeStorage(appId, token) {
     setText,
     setBlob,
     remove,
+    removeConfirmed,
     list,
     subscribe,
     removeFolder,

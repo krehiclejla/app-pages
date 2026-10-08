@@ -11,7 +11,7 @@
  * the deletion.
  */
 export async function removePageStorage(storage, artifactId) {
-  await storage.remove(`artifacts/${artifactId}.json`)
+  await storage.removeConfirmed(`artifacts/${artifactId}.json`)
   await Promise.allSettled([
     storage.removeFolder(`versions/${artifactId}`),
     storage.removeFolder(`projects/${artifactId}`),
